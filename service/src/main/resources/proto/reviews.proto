@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "com.nkatirtzis.grpcdemo";
+option java_outer_classname = "Reviews";
+
+// The service definition.
+service ReviewsService {
+    // Retrieves a review.
+    rpc GetReviews (Request) returns (Response) {}
+}
+//The request message.
+message Request {
+    int32 id = 1;
+}
+//The response message.
+message Response {
+    string text = 1;
+}

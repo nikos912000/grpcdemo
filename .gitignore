@@ -1,0 +1,41 @@
+### Mac ###
+.DS_Store
+
+### Git ###
+*.orig
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.classpath
+.project
+.checkstyle
+.settings/
+*.launch
+
+### NetBeans ###
+nb-configuration.xml
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### Maven ###
+work/
+target/
+classes/
+
+### Spring ###
+*.pid
+*.springBeans
+
+### Ephemeral files ###
+src/main/resources/git.properties
+log/
+logs/
