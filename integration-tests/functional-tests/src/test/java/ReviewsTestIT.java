@@ -1,5 +1,3 @@
-import static java.lang.Thread.sleep;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static com.nkatirtzis.grpcdemo.HttpHeaders.REQUEST_ID;
@@ -66,7 +64,6 @@ class ReviewsTestIT {
         assertEquals(Status.OK, grpcResponse.getStatus());
         Assertions.assertEquals(REVIEW_RESPONSE, grpcResponse.getBody().getText());
         grpcClient.shutdown();
-        sleep(5000000);
     }
 
     @Test
