@@ -74,7 +74,7 @@ or using grpcurl:
 
 ### Metrics
 
-The app exposes an endpoint under `\metrics` where you can see a list of available metrics.
+The app exposes an endpoint under `/metrics` where you can see a list of available metrics.
 
 ### Traces
 
