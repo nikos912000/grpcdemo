@@ -33,11 +33,11 @@ You can run the app (i.e. *com.nkatirtzis.grpcdemo.Application*) on Intellij.
 
 #### Run the jar file
 
-To run the jar file run the following command:
+To run the jar file:
 
     java -jar service/target/service-0.0.1-SNAPSHOT-exec.jar
 
-#### Running in minikube
+#### Run in minikube
 To run the application as a Docker container in a minikube cluster:
 
     make minikube-build
