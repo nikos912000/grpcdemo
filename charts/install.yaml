@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcdemo
+spec:
+  selector:
+    matchLabels:
+      app: grpcdemo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: grpcdemo
+    spec:
+      containers:
+        - name: grpcdemo
+          image: docker.io/grpcdemo:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            - name: grpc
+              containerPort: 6565
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpcdemo
+  labels:
+    app: grpcdemo
+spec:
+  type: ClusterIP
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+    - name: grpc
+      protocol: TCP
+      port: 50051
+      targetPort: 6565
+
+  selector:
+    app: sbapp

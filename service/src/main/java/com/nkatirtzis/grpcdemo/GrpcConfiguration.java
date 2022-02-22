@@ -1,14 +1,5 @@
 package com.nkatirtzis.grpcdemo;
 
-import java.io.IOException;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import brave.Tracing;
 import brave.grpc.GrpcTracing;
 import com.nkatirtzis.grpcdemo.interceptors.GrpcExceptionInterceptor;
@@ -20,6 +11,14 @@ import io.grpc.ServerInterceptors;
 import io.grpc.health.v1.HealthCheckResponse;
 import io.grpc.protobuf.services.ProtoReflectionService;
 import io.grpc.services.HealthStatusManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.io.IOException;
 
 /**
  * gRPC Spring configuration.

@@ -11,10 +11,10 @@ Demo application for a Spring Boot service which exposes a gRPC endpoint. Built 
 
 ### How to build
 
-Make sure you have Java 13+ installed.
+Make sure you have Java 17+ installed.
 
 Compile and run unit tests:
-    
+
     ./mvnw clean verify
 
 Run integration tests:
@@ -37,6 +37,12 @@ To run the jar file run the following command:
 
     java -jar service/target/service-0.0.1-SNAPSHOT-exec.jar
 
+#### Running in minikube
+To run the application as a Docker container in a minikube cluster:
+
+    make minikube-build
+    minikube kubectl -- apply -f charts/install.yaml
+
 ### Properties
 
 | Property                            | Default value          | Description                                                                                      |
@@ -57,17 +63,17 @@ You can use a gRPC cmd tool such as [grpc_cli](https://github.com/grpc/grpc/blob
 Check the server’s health status using grpc_cli:
 
     grpc_cli call localhost:6565 Check ''
-    
+
 or using grpcurl:
-    
+
     grpcurl -plaintext -d '' localhost:6565 grpc.health.v1.Health/Check
-    
+
 ### Main endpoint
 
 Hit the main endpoint using grpc_cli:
 
     grpc_cli call localhost:6565 Reviews 'id:1'
-    
+
 or using grpcurl:
 
     grpcurl -plaintext -d '{"id": 1}' localhost:6565 ReviewsService/GetReviews
@@ -79,7 +85,7 @@ The app exposes an endpoint under `/metrics` where you can see a list of availab
 ### Traces
 
 It has also been instrumented to report traces to [Zipkin](https://zipkin.io/). To run Zipkin locally:
-    
+
     docker run -p 9411:9411 openzipkin/zipkin
-    
+
 Once you make gRPC request(s) to the app traces will be available on `http://localhost:9411/zipkin/`.
