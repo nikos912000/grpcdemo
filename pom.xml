@@ -29,7 +29,7 @@
 
     <brave-grpc.version>5.13.7</brave-grpc.version>
     <grpc.version>1.44.1</grpc.version>
-    <jackson.version>2.13.1</jackson.version>
+    <jackson.version>2.13.4.2</jackson.version>
     <javax.inject.version>1</javax.inject.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
