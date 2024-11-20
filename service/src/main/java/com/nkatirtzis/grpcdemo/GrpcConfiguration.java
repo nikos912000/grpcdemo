@@ -26,7 +26,7 @@ import java.io.IOException;
 @Configuration
 @EnableConfigurationProperties(GrpcServerProperties.class)
 public class GrpcConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(GrpcConfiguration.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GrpcConfiguratio.class);
 
     @Autowired
     private Tracing tracing;
